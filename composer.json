@@ -1,0 +1,16 @@
+{
+    "name": "fjcoud/ip-finder-api",
+    "description": "A sample App for interacting with RDS with STS",
+    "type": "sample-app",
+    "minimum-stability": "stable",
+    "license": "Apache-2.0",
+    "authors": [
+        {
+            "name": "fjcloud",
+            "homepage": "https://github.com/fjcloud"
+        }
+    ],
+    "require": {
+        "aws/aws-sdk-php": "^3.2.6"
+    }
+}
