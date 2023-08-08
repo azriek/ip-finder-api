@@ -24,8 +24,11 @@ $token = $RdsAuthGenerator->createToken($clusterEndpoint . ":" . $clusterPort, $
 
 if (!empty($_SERVER['HTTP_CLIENT_IP'])) {
     $ip = $_SERVER['HTTP_CLIENT_IP'];
-//} elseif (!empty($_SERVER['HTTP_X_FORWARDED_FOR'])) {
-//    $ip = $_SERVER['HTTP_X_FORWARDED_FOR'];
+} elseif (!empty($_SERVER['HTTP_X_FORWARDED_FOR'])) {
+    $xForwardedFor = $_SERVER['HTTP_X_FORWARDED_FOR'];
+    $ipList = explode(',', $xForwardedFor);
+    $ipList = array_map('trim', $ipList);
+    $ip = $ipList[0];
 } else {
     $ip = $_SERVER['REMOTE_ADDR'];
 }
